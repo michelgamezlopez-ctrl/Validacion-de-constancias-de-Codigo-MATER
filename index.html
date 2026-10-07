@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Validación de constancias · Código Mater</title>
+<style>
+:root{--vino:#7a1236;--verde:#0d7b6b;--oro:#c39a4a;--fondo:#f6f4ef;--tinta:#202020}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--fondo);color:var(--tinta)}
+.top{height:14px;background:var(--verde)}.wrap{max-width:860px;margin:38px auto;padding:0 18px}.card{background:white;border:1px solid #ddd;border-radius:16px;padding:30px;box-shadow:0 8px 28px rgba(0,0,0,.06)}
+h1{color:var(--vino);margin:0 0 8px;font-size:30px}.sub{color:var(--verde);font-weight:700;margin-bottom:22px}.notice{background:#fbf7ee;border-left:4px solid var(--oro);padding:12px 14px;border-radius:8px;margin:18px 0}
+label{display:block;font-weight:700;margin-top:14px}input{width:100%;padding:12px;margin-top:6px;border:1px solid #bbb;border-radius:9px;font-size:16px}button{margin-top:20px;border:0;border-radius:9px;background:var(--verde);color:white;font-weight:700;padding:12px 18px;font-size:16px;cursor:pointer}.foot{margin-top:20px;color:#666;font-size:13px}
+</style></head><body><div class="top"></div><div class="wrap"><div class="card">
+<h1>Validación de constancias</h1>
+<div class="sub">Hospital IMSS-Bienestar de la Mujer · San Cristóbal de Las Casas</div>
+<p>Este portal permite verificar la autenticidad de constancias emitidas por el Departamento de Educación en Salud.</p>
+<div class="notice"><strong>Recomendación:</strong> use el código QR impreso en la constancia. La consulta manual requiere los tres datos de seguridad.</div>
+<label>Folio</label><input id="folio" placeholder="HM-DES/CM-001/2026">
+<label>Nombre completo</label><input id="nombre" placeholder="Nombre tal como aparece en la constancia">
+<label>Token de validación</label><input id="token" placeholder="Código de seguridad">
+<button onclick="go()">Verificar constancia</button>
+<div class="foot">Sistema de validación documental · Departamento de Educación en Salud</div>
+<script>
+function slugFolio(v){return v.trim().replaceAll('/','-')}
+function go(){const f=slugFolio(document.getElementById('folio').value);const n=document.getElementById('nombre').value.trim();const t=document.getElementById('token').value.trim();if(!f||!n||!t){alert('Complete folio, nombre y token.');return;}location.href='verificar.html?f='+encodeURIComponent(f)+'&n='+encodeURIComponent(n)+'&t='+encodeURIComponent(t)}
+</script></div></div></body></html>
