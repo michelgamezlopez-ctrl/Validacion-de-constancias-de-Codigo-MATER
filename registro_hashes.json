@@ -3,5 +3,10 @@
     "hash": "14877cfc7b45672fd7f72d660737228b7727e531fce3b9eedd8487c9c66e54ad",
     "estatus": "VIGENTE",
     "nota": "REGISTRO DE PRUEBA - no corresponde a una constancia real"
+  },
+  {
+    "hash": "3d76e0954225360dd6c89650b12b3fcc71cf6511b6b21d646bc6708fb5e72631",
+    "estatus": "PRUEBA",
+    "nota": "REGISTRO DE PRUEBA - SIN VALIDEZ OFICIAL"
   }
 ]
